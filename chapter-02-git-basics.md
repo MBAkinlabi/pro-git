@@ -237,15 +237,15 @@ Changes to be committed:
 - Another useful thing you may want to do is to keep the file in your working tree but remove it from your staging area.
 - This is particularly useful if you forgot to add something to your `.gitignore` file and accidentally staged it, like a large log file or a bunch of .a compiled files. To do this, use the `--cached` option:
 ```bash
-    $ git rm --cached README
+$ git rm --cached README
 ```
 - You can pass files, directories, and file-glob patterns to the `git rm` command. That means you can do things such as:
 ```bash
-    $ git rm log/\*.log
+$ git rm log/\*.log
 ```
 - Note the backslash (`\`) in front of the `*.` This is necessary because Git does its own file name expansion in addition to your shell’s filename expansion. This command removes all files that have the `.log` extension in the `log/` directory. Or, you can do something like this:
 ```bash
-    $ git rm \*~
+$ git rm \*~
 ```
 - This command removes all files whose names end with a `~`
 
@@ -253,7 +253,7 @@ Changes to be committed:
 
 - Git has a `mv` command. If you want to rename a file in Git, you can run something like:
 ```bash
-    $ git mv file_from file_to
+$ git mv file_from file_to
 ```
 - In fact, if you run something like this and look at the status, you’ll see that Git considers it a renamed file:
 ```bash
@@ -278,7 +278,7 @@ $ git add README
 - The most basic and powerful tool to do this is the `git log` command.
 - These examples use a very simple project called “simplegit”. To get the project, run:
 ```bash
-    $ git clone https://github.com/schacon/simplegit-progit
+$ git clone https://github.com/schacon/simplegit-progit
 ```
 
 - When you run `git log` in this project, you should get output that looks something like this:
@@ -450,7 +450,7 @@ $ git log --pretty=format:"%h %s" --graph
 - You’ve seen one such option already — the `-2` option, which displays only the last two commits. In fact, you can do `-<n>`, where `n` is any integer to show the last `n` commits. In reality, you’re unlikely to use that often, because Git by default pipes all output through a pager so you see only one page of log output at a time.
 - However, the time-limiting options such as `--since` and `--until` are very useful. For example, this command gets the list of commits made in the last two weeks:
 ```bash
-    $ git log --since=2.weeks
+$ git log --since=2.weeks
 ```
 - This command works with lots of formats — you can specify a specific date like `"2008-01-15"`, or a relative date such as `"2 years 1 day 3 minutes ago"`.
 
@@ -851,5 +851,5 @@ Signed-off-by: Scott Chacon <schacon@example.com>
 ```
 - As you can tell, Git simply replaces the new command with whatever you alias it for. However, maybe you want to run an external command, rather than a Git subcommand. In that case, you start the command with a `!` character. This is useful if you write your own tools that work with a Git repository. We can demonstrate by aliasing `git visual` to run `gitk`:
 ```bash
-    $ git config --global alias.visual '!gitk'
+$ git config --global alias.visual '!gitk'
 ```
